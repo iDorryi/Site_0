@@ -28,6 +28,10 @@ li {
     list-style-type: none;
 }
 
+* {
+    box-sizing: border-box
+}
+
 
 @import 'vars';
 @import 'mixins';
@@ -52,7 +56,7 @@ li {
     position: absolute;
     z-index: 2;
     margin-top: 24px;
-    right: 0;
+    right: -232px;
     transition: right .3s;
 
 }
@@ -64,8 +68,7 @@ li {
     visibility: hidden;
 
     &:checked~.nav {
-
-        right: -232px;
+        right: 0;
     }
 
 }
@@ -328,13 +331,20 @@ li {
     gap: 18px;
     padding-top: 12px;
 
-
-    &_box {
-        z-index: 2;
+    &_box_container {
         flex-shrink: 0;
         background: #FFF;
         box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
         padding: 10px 30px 11px 9px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+    }
+
+    &_box {
+        z-index: 2;
+
     }
 
     &_check {
@@ -463,6 +473,11 @@ li {
 
 }
 
+.overlay_box {
+    position: relative;
+    width: 100%;
+}
+
 .overlay {
     z-index: 1;
     position: absolute;
@@ -470,7 +485,7 @@ li {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    height: 92%;
     width: 100%;
     opacity: 0;
     transition: .3s ease;
@@ -497,7 +512,7 @@ li {
     font-weight: 400;
     line-height: normal;
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -518,6 +533,8 @@ li {
 }
 
 .img_item {
+    display: block;
+    height: auto;
     padding-bottom: 24px;
 }
 
